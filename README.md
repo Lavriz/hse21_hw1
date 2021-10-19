@@ -5,9 +5,6 @@ ls -lh /usr/share/data-minor-bioinf/assembly
 
 ls /usr/share/data-minor-bioinf/assembly* | xargs -tI{} ln -s {} // create links to files
 
-ls *.fastq | xargs -P 4 -tI{} fastqc -o fastqc {} // fastqc! 
-
-multiqc -o multiqc fastqc
 
 platanus_trim oil_R1.fastq oil_R2.fastq
 
@@ -20,7 +17,7 @@ mkdir fastqc
 
 ls *.fq | xargs -P 4 -tI{} fastqc -o fastqc {}
 
-mkdir fastqc 
+mkdir multifastqc 
 multiqc -o multiqc fastqc
 
 # trimming files + this part is completely repeated with less data 
