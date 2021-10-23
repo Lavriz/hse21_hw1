@@ -5,30 +5,28 @@ ls -lh /usr/share/data-minor-bioinf/assembly
 
 ls /usr/share/data-minor-bioinf/assembly* | xargs -tI{} ln -s {} // create links to files
 
+# 1st step
 seqtk sample -s1205 oil_R1.fastq 5000000 > subR1_pair.fq
 seqtk sample -s1205 oil_R2.fastq 5000000 > subR2_pair.fq
 seqtk sample -s1205 oilMP_S4_L001_R1_001.fastq 1500000 > subMP1.fq
 seqtk sample -s1205 oilMP_S4_L001_R2_001.fastq 1500000 > subMP2.fq
 
+# fastqc & multiqc
 mkdir fastqc
-
 ls *.fq | xargs -P 4 -tI{} fastqc -o fastqc {}
-
 mkdir multifastqc 
 multiqc -o multiqc fastqc
 
 # trimming files + this part is completely repeated with less data 
 platanus_trim subR1_pair.fq subR2_pair.fq
-
 platanus_internal_trim subMP1.fq subMP2.fq
-
-# fastqc + multiqc
-ls *.trimmed | xargs -P 4 -tI{} fastqc -o fastqc {}
-
-multiqc -o multiqc fastqc
 
 mkdir fq_trimmed
 mv -v *trimmed fq_trimmed/
+
+# fastqc & multiqc for the trimmed files
+ls *.trimmed | xargs -P 4 -tI{} fastqc -o fastqc {}
+multiqc -o multiqc fastqc
 
 rm sub*
 
