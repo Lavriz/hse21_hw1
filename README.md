@@ -1,5 +1,5 @@
 # hse21_hw1
-```linux
+```bash
 ls /usr/share/data-minor-bioinf/assembly
 ls -lh /usr/share/data-minor-bioinf/assembly
 
