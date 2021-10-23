@@ -1,11 +1,11 @@
 # hse21_hw1
-```
+```linux
 ls /usr/share/data-minor-bioinf/assembly
 ls -lh /usr/share/data-minor-bioinf/assembly
 
-ls /usr/share/data-minor-bioinf/assembly* | xargs -tI{} ln -s {} // create links to files
+ls /usr/share/data-minor-bioinf/assembly* | xargs -tI{} ln -s {} //create links to files
 
-// 1st step
+//1st step
 seqtk sample -s1205 oil_R1.fastq 5000000 > subR1_pair.fq
 seqtk sample -s1205 oil_R2.fastq 5000000 > subR2_pair.fq
 seqtk sample -s1205 oilMP_S4_L001_R1_001.fastq 1500000 > subMP1.fq
