@@ -23,17 +23,16 @@ platanus_trim subR1_pair.fq subR2_pair.fq
 platanus_internal_trim subMP1.fq subMP2.fq
 
 
-# fastqc & multiqc for the trimmed files
-ls *.trimmed | xargs -P 4 -tI{} fastqc -o fastqc {}
-
+# fastqc + multiqc
 mkdir fastqc2
-mv -v *fq.trimmed* ~/fastqc2
+ls *.fq.* | xargs -P 4 -tI{} fastqc -o fastqc2 {}
+
 multiqc -o multiqc fastqc2
 
-
 mkdir trimmed_fq
-mv -v *trimmed trimmed_fq/
+mv -v *.fq.* *trimmed trimmed_fq/
 
+cd ../
 rm sub*
 
 tmux
