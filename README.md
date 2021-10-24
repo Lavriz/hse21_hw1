@@ -22,12 +22,17 @@ multiqc -o multiqc fastqc
 platanus_trim subR1_pair.fq subR2_pair.fq
 platanus_internal_trim subMP1.fq subMP2.fq
 
-mkdir trimmed_fq
-mv -v *trimmed trimmed_fq/
 
 # fastqc & multiqc for the trimmed files
 ls *.trimmed | xargs -P 4 -tI{} fastqc -o fastqc {}
-multiqc -o multiqc fastqc
+
+mkdir fastqc2
+mv -v *fq.trimmed* ~/fastqc2
+multiqc -o multiqc fastqc2
+
+
+mkdir trimmed_fq
+mv -v *trimmed trimmed_fq/
 
 rm sub*
 
@@ -43,9 +48,9 @@ time platanus gap_close -o Poil -t 1 -c Poil_scaffold.fa -IP1 trimmed_fq/subR1_p
 tmux kill-server
 
 # assembly with less data 
-
 seqtk sample -s1205 oil_R1.fastq 3000000 > subR1_pair.fq
 seqtk sample -s1205 oil_R2.fastq 3000000 > subR2_pair.fq
 seqtk sample -s1205 oilMP_S4_L001_R1_001.fastq 1000000 > subMP1.fq
 seqtk sample -s1205 oilMP_S4_L001_R2_001.fastq 1000000 > subMP2.fq
+# repeat trimming
 ```
