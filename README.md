@@ -53,3 +53,5 @@ seqtk sample -s1205 oilMP_S4_L001_R1_001.fastq 1000000 > subMP1.fq
 seqtk sample -s1205 oilMP_S4_L001_R2_001.fastq 1000000 > subMP2.fq
 # repeat trimming
 ```
+MultiQC by trimmed files:
+![image] (https://user-images.githubusercontent.com/55647212/138617462-0f426c60-fcb3-49dd-ae85-7afa020d2812.png)
