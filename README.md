@@ -42,7 +42,7 @@ time platanus gap_close -o Poil -t 1 -c Poil_scaffold.fa -IP1 trimmed_fq/subR1_p
 
 tmux kill-server
 
-// assembly with less data 
+# assembly with less data 
 
 seqtk sample -s1205 oil_R1.fastq 3000000 > subR1_pair.fq
 seqtk sample -s1205 oil_R2.fastq 3000000 > subR2_pair.fq
