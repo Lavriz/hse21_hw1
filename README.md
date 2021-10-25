@@ -23,7 +23,6 @@ multiqc -o multiqc fastqc
 platanus_trim subR1_pair.fq subR2_pair.fq
 platanus_internal_trim subMP1.fq subMP2.fq
 
-
 # fastqc + multiqc
 mkdir fastqc2
 ls *.fq.* | xargs -P 4 -tI{} fastqc -o fastqc2 {}
