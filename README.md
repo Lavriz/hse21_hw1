@@ -101,4 +101,6 @@ time platanus gap_close -o Poil -t 1 -c Poil_scaffold.fa -IP1 trimmed_fq/subR1_p
 tmux kill-server
 ```
 The analysis and comparison are in the Python notebook \
+![image](https://user-images.githubusercontent.com/55647212/138619281-9d70efc3-5d5b-47c8-9ccd-295ab32f6e50.png)
+
 **Overall conclusion**: the number of scaffolds stayed the same, but the number and length of gaps increased
