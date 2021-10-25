@@ -76,3 +76,5 @@ MultiQC by trimmed files:
 ![image](https://user-images.githubusercontent.com/55647212/138617458-06f5cc29-523f-489c-9291-ebc5485917a6.png)
 ![image](https://user-images.githubusercontent.com/55647212/138617460-d5027f37-cc5b-49ff-8c3a-aebd8a70e189.png)
 ![image](https://user-images.githubusercontent.com/55647212/138617462-0f426c60-fcb3-49dd-ae85-7afa020d2812.png)
+
+Part 2 with less data: everything is in the Python notebook
