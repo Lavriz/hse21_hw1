@@ -102,5 +102,5 @@ tmux kill-server
 ```
 The analysis and comparison are in the Python notebook \
 ![image](https://user-images.githubusercontent.com/55647212/138619281-9d70efc3-5d5b-47c8-9ccd-295ab32f6e50.png)
-
+![image](https://user-images.githubusercontent.com/55647212/138619337-1ed9dfb3-564e-4231-ab2e-bf9d111c4f2f.png)
 **Overall conclusion**: the number of scaffolds stayed the same, but the number and length of gaps increased
